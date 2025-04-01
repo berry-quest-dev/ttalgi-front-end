@@ -9,8 +9,8 @@
         "name": "next"
       }
     ],
-    "jsx": "preserve",
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "preserve"
   },
   "include": [
     "src/**/*",
