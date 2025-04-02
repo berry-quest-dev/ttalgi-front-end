@@ -23,31 +23,31 @@
     "baseUrl": ".",
     "paths": {
       "@packages/api/*": [
-        "packages/api/src/*"
+        "../api/src/*"
       ],
       "@packages/auth/*": [
-        "packages/auth/*"
+        "../auth/*"
       ],
       "@packages/config/*": [
-        "packages/config/*"
+        "../config/*"
       ],
       "@packages/styles/*": [
-        "packages/styles/*"
+        "../styles/*"
       ],
       "@packages/ui/*": [
-        "packages/ui/src/*"
+        "../ui/src/*"
       ],
       "@packages/ui": [
-        "packages/ui/src"
+        "../ui/src"
       ],
       "@packages/utils/*": [
-        "packages/utils/*"
+        "../utils/*"
       ],
       "@web/*": [
-        "apps/web/src/*"
+        "../../apps/web/src/*"
       ],
       "@admin/*": [
-        "apps/admin/src/*"
+        "../../apps/admin/src/*"
       ],
     }
   },
