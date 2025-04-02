@@ -9,14 +9,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "next": "^15.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "antd": "^5.14.0",
     "@ant-design/icons": "^5.2.0"
-  },
-  "devDependencies": {
-    "eslint-config-next": "^15.2.0"
   },
   "prettier": "../../packages/config/prettier.config.js",
   "tailwindcss": "../../packages/config/tailwind.config.ts",
