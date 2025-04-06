@@ -19,6 +19,7 @@ out/
 
 # production
 build
+dist
 
 # misc
 .DS_Store
@@ -40,4 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# turbo
+.turbo
+
+# folder
 apps/mobile
+*storybook.log

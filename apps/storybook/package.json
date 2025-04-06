@@ -1,0 +1,27 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3",
+    "@storybook/addon-essentials": "^8.6.8",
+    "@storybook/addon-interactions": "^8.6.8",
+    "@storybook/addon-onboarding": "^8.6.8",
+    "@storybook/blocks": "^8.6.8",
+    "@storybook/react": "^8.6.8",
+    "@storybook/react-vite": "^8.6.8",
+    "@storybook/test": "^8.6.8",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.6.8",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

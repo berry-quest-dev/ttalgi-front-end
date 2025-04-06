@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import baseConfig from "../../packages/config/next.config.base";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const webConfig = {
+  ...baseConfig,
 };
 
-export default nextConfig;
+export default webConfig;
