@@ -10,5 +10,8 @@
   },
   "prettier": "../../packages/config/prettier.config.js",
   "tailwindcss": "../../packages/config/tailwind.config.ts",
-  "postcss": "../../packages/config/postcss.config.mjs"
+  "postcss": "../../packages/config/postcss.config.mjs",
+  "dependencies": {
+    "@packages/ui": "workspace:^"
+  }
 }
