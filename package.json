@@ -13,7 +13,7 @@
     "dev:admin": "pnpm --filter=admin dev",
     "build": "turbo build",
     "build:ui": "pnpm --filter @packages/ui build",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint": "turbo run lint --cache-dir=.turbo",
     "format": "prettier --write .",
     "test": "turbo run test",
     "test:web": "pnpm --filter=web test",

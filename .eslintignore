@@ -1,8 +1,4 @@
 node_modules/
-dist/
-.next/
-**/node_modules/
-**/dist/
-**/.next/
-
-package/styles/_reset.scss
+dist
+build
+.next

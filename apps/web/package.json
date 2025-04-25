@@ -8,7 +8,6 @@
     "start": "next start",
     "test": "jest"
   },
-  "prettier": "../../packages/config/prettier.config.js",
   "tailwindcss": "../../packages/config/tailwind.config.ts",
   "postcss": "../../packages/config/postcss.config.mjs",
   "dependencies": {

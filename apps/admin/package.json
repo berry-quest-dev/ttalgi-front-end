@@ -12,7 +12,6 @@
     "antd": "^5.14.0",
     "@ant-design/icons": "^5.2.0"
   },
-  "prettier": "../../packages/config/prettier.config.js",
   "tailwindcss": "../../packages/config/tailwind.config.ts",
   "postcss": "../../packages/config/postcss.config.mjs"
 }
