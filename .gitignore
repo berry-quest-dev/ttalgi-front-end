@@ -12,6 +12,8 @@ node_modules
 
 # testing
 coverage
+*storybook.log
+storybook-static
 
 # next.js
 .next/
@@ -46,4 +48,3 @@ next-env.d.ts
 
 # folder
 apps/mobile
-*storybook.log
