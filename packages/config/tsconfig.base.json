@@ -20,34 +20,34 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "../../",
     "paths": {
       "@packages/api/*": [
-        "../api/src/*"
+        "packages/api/src/*"
       ],
       "@packages/auth/*": [
-        "../auth/*"
+        "packages/auth/*"
       ],
       "@packages/config/*": [
-        "../config/*"
+        "packages/config/*"
       ],
       "@packages/styles/*": [
-        "../styles/*"
+        "packages/styles/*"
       ],
       "@packages/ui/*": [
-        "../ui/src/*"
+        "packages/ui/src/*"
       ],
       "@packages/ui": [
-        "../ui/src"
+        "packages/ui/src"
       ],
       "@packages/utils/*": [
-        "../utils/*"
+        "packages/utils/*"
       ],
       "@web/*": [
-        "../../apps/web/src/*"
+        "apps/web/src/*"
       ],
       "@admin/*": [
-        "../../apps/admin/src/*"
+        "apps/admin/src/*"
       ],
     }
   },
