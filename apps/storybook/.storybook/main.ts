@@ -16,6 +16,9 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
   viteFinal: (config) => {
     config.resolve = {
       ...(config.resolve || {}),
@@ -24,14 +27,6 @@ const config: StorybookConfig = {
           find: "@ui",
           replacement: path.resolve(__dirname, "../../../packages/ui/src"),
         },
-        // {
-        //   find: "@api",
-        //   replacement: path.resolve(__dirname, "../../../packages/api/src"),
-        // },
-        // {
-        //   find: "@utils",
-        //   replacement: path.resolve(__dirname, "../../../packages/utils/src"),
-        // },
       ],
     };
     return config;
