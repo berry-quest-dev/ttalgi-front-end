@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "antd": "^5.14.0",
-    "@ant-design/icons": "^5.2.0"
+    "@ant-design/icons": "^5.2.0",
+    "@packages/ui": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "tailwindcss": "../../packages/config/tailwind.config.ts",
   "postcss": "../../packages/config/postcss.config.mjs"
