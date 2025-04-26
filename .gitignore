@@ -46,5 +46,5 @@ next-env.d.ts
 # turbo
 .turbo
 
-# folder
-apps/mobile
+# vscode
+.vscode
