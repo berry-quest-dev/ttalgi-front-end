@@ -24,8 +24,12 @@ const config: StorybookConfig = {
       ...(config.resolve || {}),
       alias: [
         {
-          find: "@ui",
+          find: "@packages/ui",
           replacement: path.resolve(__dirname, "../../../packages/ui/src"),
+        },
+        {
+          find: "@packages/styles",
+          replacement: path.resolve(__dirname, "../../../packages/styles"),
         },
       ],
     };
