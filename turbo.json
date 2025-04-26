@@ -3,18 +3,25 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**"]
+      "outputs": [".next/**", "dist/**", "build/**"]
     },
     "dev": {
       "cache": false
     },
-    "lint": {},
+    "lint": {
+      "cache": false,
+      "outputs": []
+    },
     "test": {
       "cache": false,
       "outputs": []
     },
     "storybook": {
       "cache": false,
+      "outputs": []
+    },
+    "typecheck": {
+      "cache": true,
       "outputs": []
     }
   }

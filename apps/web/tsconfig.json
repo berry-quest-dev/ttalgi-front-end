@@ -10,6 +10,17 @@
       }
     ]
   },
-  "include": ["src/**/*", "next-env.d.ts", ".next/types/**/*.ts", "../../packages/ui"],
-  "exclude": ["node_modules", "dist", ".next", "**/*.test.ts", "**/*.test.tsx"]
+  "include": [
+    "src/**/*",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "../../packages/ui"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
 }
