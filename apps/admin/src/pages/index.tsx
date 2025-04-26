@@ -1,3 +1,10 @@
+import { Button } from "@packages/ui";
+
 export default function Home() {
-  return "Hello ADMIN";
+  return (
+    <>
+      THIS IS THE ADMIN PAGE
+      <Button />
+    </>
+  );
 }

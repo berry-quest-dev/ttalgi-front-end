@@ -1,7 +1,9 @@
 import type { Preview } from "@storybook/react";
+import "@packages/styles/global.css"; // Tailwind or reset.css 등
 
 const preview: Preview = {
   parameters: {
+    layout: "centered",
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

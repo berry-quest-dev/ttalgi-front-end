@@ -16,22 +16,21 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
   viteFinal: (config) => {
     config.resolve = {
       ...(config.resolve || {}),
       alias: [
         {
-          find: "@ui",
+          find: "@packages/ui",
           replacement: path.resolve(__dirname, "../../../packages/ui/src"),
         },
-        // {
-        //   find: "@api",
-        //   replacement: path.resolve(__dirname, "../../../packages/api/src"),
-        // },
-        // {
-        //   find: "@utils",
-        //   replacement: path.resolve(__dirname, "../../../packages/utils/src"),
-        // },
+        {
+          find: "@packages/styles",
+          replacement: path.resolve(__dirname, "../../../packages/styles"),
+        },
       ],
     };
     return config;

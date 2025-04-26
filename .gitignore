@@ -12,6 +12,8 @@ node_modules
 
 # testing
 coverage
+*storybook.log
+storybook-static
 
 # next.js
 .next/
@@ -44,6 +46,5 @@ next-env.d.ts
 # turbo
 .turbo
 
-# folder
-apps/mobile
-*storybook.log
+# vscode
+.vscode
