@@ -9,7 +9,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@packages/ui": "workspace:^"
+    "@packages/ui": "workspace:^",
+    "@packages/image": "workspace:^"
   },
   "peerDependencies": {
     "react": ">=18",
