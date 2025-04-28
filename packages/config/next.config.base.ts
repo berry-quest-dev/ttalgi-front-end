@@ -2,7 +2,7 @@ import path from "path";
 import type { NextConfig } from "next";
 import withTM from "next-transpile-modules";
 
-const withTranspile = withTM(["@packages/ui"]);
+const withTranspile = withTM(["@packages/ui", "@packages/image"]);
 
 const baseConfig: NextConfig = {
   reactStrictMode: true,

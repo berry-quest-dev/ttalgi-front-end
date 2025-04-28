@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "types": ["react"],
+    "types": [
+      "react"
+    ],
     "target": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,17 +22,45 @@
     "incremental": true,
     "baseUrl": "../../",
     "paths": {
-      "@packages/api/*": ["packages/api/src/*"],
-      "@packages/auth/*": ["packages/auth/*"],
-      "@packages/config/*": ["packages/config/*"],
-      "@packages/styles/*": ["packages/styles/*"],
-      "@packages/ui/*": ["packages/ui/src/*"],
-      "@packages/ui": ["packages/ui/src"],
-      "@packages/utils/*": ["packages/utils/*"],
-      "@web/*": ["apps/web/src/*"],
-      "@admin/*": ["apps/admin/src/*"]
+      "@packages/api/*": [
+        "packages/api/src/*"
+      ],
+      "@packages/auth/*": [
+        "packages/auth/*"
+      ],
+      "@packages/config/*": [
+        "packages/config/*"
+      ],
+      "@packages/image/*": [
+        "packages/image/*"
+      ],
+      "@packages/image": [
+        "packages/image"
+      ],
+      "@packages/styles/*": [
+        "packages/styles/*"
+      ],
+      "@packages/ui/*": [
+        "packages/ui/src/*"
+      ],
+      "@packages/ui": [
+        "packages/ui/src"
+      ],
+      "@packages/utils/*": [
+        "packages/utils/*"
+      ],
+      "@web/*": [
+        "apps/web/src/*"
+      ],
+      "@admin/*": [
+        "apps/admin/src/*"
+      ]
     }
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

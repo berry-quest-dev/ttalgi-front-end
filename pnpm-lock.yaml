@@ -180,6 +180,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@packages/image':
+        specifier: workspace:^
+        version: link:../../packages/image
       '@packages/ui':
         specifier: workspace:^
         version: link:../../packages/ui
@@ -191,6 +194,8 @@ importers:
         version: 19.1.0(react@19.1.0)
 
   packages/config: {}
+
+  packages/image: {}
 
   packages/styles: {}
 
