@@ -7,6 +7,7 @@ export default function Map() {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<any>(null);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
 
   const handleFindMyLocation = () => {
     if (!navigator.geolocation) {
@@ -46,15 +47,13 @@ export default function Map() {
   };
 
   useEffect(() => {
-    if (!window.kakao) return;
-    if (!mapRef.current) return;
+    if (!isKakaoLoaded || !window.kakao || !mapRef.current) return;
 
     const { kakao } = window;
 
     kakao.maps.load(() => {
       const mapOptions = {
-        // 기본 위치 : 서울 강남역
-        center: new kakao.maps.LatLng(37.4979, 127.0276),
+        center: new kakao.maps.LatLng(37.4979, 127.0276), // 강남역
         level: 3,
       };
       const map = new kakao.maps.Map(mapRef.current, mapOptions);
@@ -67,10 +66,12 @@ export default function Map() {
   return (
     <>
       <Script
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         src={`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&autoload=false`}
         onLoad={() => {
-          window.kakao.maps.load(() => {});
+          window.kakao.maps.load(() => {
+            setIsKakaoLoaded(true);
+          });
         }}
       />
       <div className="relative w-full h-screen">
