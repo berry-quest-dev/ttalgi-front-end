@@ -3,34 +3,25 @@
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 
-type LocationType = {
-  lat: number;
-  lng: number;
-};
-
-const defaultLocation = {
-  lat: 37.4979,
-  lng: 127.0276,
-};
-
 export default function Map() {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [location, setLocation] = useState<LocationType>(defaultLocation);
+  const mapInstance = useRef<any>(null);
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  useEffect(() => {
-    if (!window.kakao) return;
-    if (!mapRef.current) return;
+  const handleFindMyLocation = () => {
     if (!navigator.geolocation) {
-      setLocation(defaultLocation);
+      alert("이 브라우저는 위치 정보를 지원하지 않습니다.");
       return;
     }
-
-    const { kakao } = window;
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        setLocation({ lat: latitude, lng: longitude });
+        const locPosition = new window.kakao.maps.LatLng(latitude, longitude);
+
+        if (mapInstance.current) {
+          mapInstance.current.setCenter(locPosition);
+        }
       },
       (error) => {
         switch (error.code) {
@@ -43,20 +34,33 @@ export default function Map() {
           case error.TIMEOUT:
             alert("위치 정보 요청이 시간 초과되었습니다. 다시 시도해주세요.");
             break;
+          default:
+            alert("알 수 없는 에러가 발생했습니다." + error.message);
         }
       },
       {
-        enableHighAccuracy: true, // 위치정보의 정확도를 높이는 옵션
-        timeout: 5000, // 선택 위치 요청 제한시간 3초
+        enableHighAccuracy: true,
+        timeout: 5000,
       }
     );
+  };
+
+  useEffect(() => {
+    if (!window.kakao) return;
+    if (!mapRef.current) return;
+
+    const { kakao } = window;
 
     kakao.maps.load(() => {
       const mapOptions = {
-        center: new kakao.maps.LatLng(location.lat, location.lng),
+        // 기본 위치 : 서울 강남역
+        center: new kakao.maps.LatLng(37.4979, 127.0276),
         level: 3,
       };
-      new kakao.maps.Map(mapRef.current, mapOptions);
+      const map = new kakao.maps.Map(mapRef.current, mapOptions);
+      mapInstance.current = map;
+      setIsMapLoaded(true);
+      handleFindMyLocation();
     });
   });
 
@@ -69,7 +73,17 @@ export default function Map() {
           window.kakao.maps.load(() => {});
         }}
       />
-      <div ref={mapRef} id="map" className="w-full h-screen"></div>
+      <div className="relative w-full h-screen">
+        <div ref={mapRef} id="map" className="w-full h-screen" />
+        {isMapLoaded && (
+          <button
+            className="absolute bottom-10 left-5 p-2 bg-white border rounded shadow z-10"
+            onClick={handleFindMyLocation}
+          >
+            📍 현재 위치
+          </button>
+        )}
+      </div>
     </>
   );
 }
