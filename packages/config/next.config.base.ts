@@ -1,19 +1,13 @@
-import path from "path";
-import type { NextConfig } from "next";
-import withTM from "next-transpile-modules";
-
-const withTranspile = withTM(["@packages/ui", "@packages/image"]);
-
-const baseConfig: NextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      "@packages/ui": path.resolve(__dirname, "../../packages/ui/src"),
-    };
-
-    return config;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  appDir: true,
+  transpilePackages: ["@packages/styles", "@packages/ui", "@packages/image"],
+  experimental: {
+    externalDir: true,
+  },
+  images: {
+    domains: ["localhost"],
   },
 };
 
-export default withTranspile(baseConfig);
+export default nextConfig;
