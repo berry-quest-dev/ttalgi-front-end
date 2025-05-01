@@ -29,6 +29,40 @@ const config = {
       },
 
       colors: {
+        // 핵심 강조
+        primary: (theme) => theme("colors.pink.300"),
+        primaryHover: (theme) => theme("colors.pink.400"),
+        onPrimary: (theme) => theme("colors.white"),
+
+        // 서브 강조
+        secondary: (theme) => theme("colors.gray.200"),
+        secondaryHover: (theme) => theme("colors.gray.300"),
+        onSecondary: (theme) => theme("colors.white"),
+
+        // 배경 및 기본 UI 요소
+        background: (theme) => theme("colors.white"),
+        surface: (theme) => theme("colors.white"),
+        divider: (theme) => theme("colors.gray.100"),
+        disabled: (theme) => theme("colors.gray.200"),
+
+        // 상태 표현
+        success: (theme) => theme("colors.green.400"),
+        error: (theme) => theme("colors.red.400"),
+        warning: (theme) => theme("colors.yellow.400"),
+        info: (theme) => theme("colors.blue.400"),
+
+        // 텍스트 색상
+        default: (theme) => theme("colors.gray.500"), // 일반 텍스트
+        title: (theme) => theme("colors.gray.600"), // 제목 텍스트
+        descript: (theme) => theme("colors.gray.400"), // 설명/서브 텍스트
+        on: (theme) => theme("colors.white"), // UI 요소 위 텍스트
+
+        // 커스텀 표현
+        badge: (theme) => theme("colors.pink.200"), // 카테고리 뱃지 등
+        marker: (theme) => theme("colors.pink.300"), // 지도 표시 마커
+        favorite: (theme) => theme("colors.pink.200"), // 하트 아이콘
+        ratingStar: (theme) => theme("colors.yellow.300"), // 별점 아이콘
+
         white: "#FFFFFF",
         gray: {
           50: "#F8F8F8",
