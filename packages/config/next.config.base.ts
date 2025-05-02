@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   appDir: true,
-  transpilePackages: ["@packages/styles", "@packages/ui", "@packages/image"],
+  transpilePackages: ["@packages/styles", "@packages/ui", "@packages/image", "@packages/d-system"],
   experimental: {
     externalDir: true,
   },

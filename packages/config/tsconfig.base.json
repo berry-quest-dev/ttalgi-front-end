@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "types": [
-      "react"
+      "react",
+      "react-dom"
     ],
     "target": "ESNext",
     "lib": [
@@ -45,6 +46,9 @@
       ],
       "@packages/ui": [
         "packages/ui/src"
+      ],
+      "@packages/d-system": [
+        "packages/designSystem"
       ],
       "@packages/utils/*": [
         "packages/utils/*"

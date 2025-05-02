@@ -15,7 +15,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "../../packages/ui",
-    "../../packages/image"
+    "../../packages/image",
+    "../../packages/designSystem"
   ],
   "exclude": [
     "node_modules",

@@ -3,6 +3,7 @@ import path from "path";
 
 const config: StorybookConfig = {
   stories: [
+    "../../../packages/designSystem/**/*.stories.@(js|jsx|ts|tsx)",
     "../../../packages/ui/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../../web/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../../admin/src/**/*.stories.@(js|jsx|ts|tsx)",
