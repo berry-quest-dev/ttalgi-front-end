@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "copy-favicon": "node copy-files.js",
+    "reinstall": "rm -rf node_modules .turbo .next && pnpm install",
     "dev": "turbo dev",
     "dev:web": "pnpm --filter=web dev",
     "dev:admin": "pnpm --filter=admin dev",

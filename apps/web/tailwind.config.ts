@@ -1,4 +1,4 @@
-import baseConfig from "../../packages/config/tailwind.config.base.ts";
+import baseConfig from "../../packages/config/tailwind.config.base.js";
 
 export default {
   ...baseConfig,
