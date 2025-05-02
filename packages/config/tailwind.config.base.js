@@ -1,10 +1,12 @@
 import path from "path";
+const { baseColors, semanticColors } = require("../designSystem/colors");
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
     path.join(__dirname, "../../apps/**/src/**/*.{js,ts,jsx,tsx}"),
     path.join(__dirname, "../../packages/ui/src/**/*.{ts,tsx,mdx}"),
+    path.join(__dirname, "../../packages/designSystem/**/*.{ts,tsx,mdx}"),
   ],
   theme: {
     extend: {
@@ -29,164 +31,21 @@ const config = {
       },
 
       colors: {
-        // 핵심 강조
-        primary: (theme) => theme("colors.pink.300"),
-        primaryHover: (theme) => theme("colors.pink.400"),
-        onPrimary: (theme) => theme("colors.white"),
-
-        // 서브 강조
-        secondary: (theme) => theme("colors.gray.200"),
-        secondaryHover: (theme) => theme("colors.gray.300"),
-        onSecondary: (theme) => theme("colors.white"),
-
-        // 배경 및 기본 UI 요소
-        background: (theme) => theme("colors.white"),
-        surface: (theme) => theme("colors.white"),
-        divider: (theme) => theme("colors.gray.100"),
-        disabled: (theme) => theme("colors.gray.200"),
-
-        // 상태 표현
-        success: (theme) => theme("colors.green.400"),
-        error: (theme) => theme("colors.red.400"),
-        warning: (theme) => theme("colors.yellow.400"),
-        info: (theme) => theme("colors.blue.400"),
-
-        // 텍스트 색상
-        default: (theme) => theme("colors.gray.500"), // 일반 텍스트
-        title: (theme) => theme("colors.gray.600"), // 제목 텍스트
-        descript: (theme) => theme("colors.gray.400"), // 설명/서브 텍스트
-        on: (theme) => theme("colors.white"), // UI 요소 위 텍스트
-
-        // 커스텀 표현
-        badge: (theme) => theme("colors.pink.200"), // 카테고리 뱃지 등
-        marker: (theme) => theme("colors.pink.300"), // 지도 표시 마커
-        favorite: (theme) => theme("colors.pink.200"), // 하트 아이콘
-        ratingStar: (theme) => theme("colors.yellow.300"), // 별점 아이콘
-
-        white: "#FFFFFF",
-        gray: {
-          50: "#F8F8F8",
-          100: "#E4E4E4",
-          200: "#CCCCCC",
-          300: "#A3A3A3",
-          400: "#848484",
-          500: "#515151",
-          600: "#000000",
-        },
-        pink: {
-          50: "#FDE8EE",
-          100: "#F7C6D8",
-          200: "#F19AB4",
-          300: "#ED6995",
-          400: "#E94A82",
-          500: "#D50979",
-          600: "#951137",
-        },
-        red: {
-          50: "#FDE2E3",
-          100: "#F9B8B6",
-          200: "#F38A87",
-          300: "#EF5A5A",
-          400: "#EB3533",
-          500: "#A50000",
-          600: "#5C0004",
-        },
-        purple: {
-          50: "#F5E2FB",
-          100: "#ECC9F2",
-          200: "#CCA0EA",
-          300: "#B770CC",
-          400: "#9B39B5",
-          500: "#8226B0",
-          600: "#4D0A79",
-        },
-        violet: {
-          50: "#E3E2FB",
-          100: "#D1D1F9",
-          200: "#B3B3F4",
-          300: "#9393EF",
-          400: "#6969E6",
-          500: "#4C4CC9",
-          600: "#1A1A7C",
-        },
-        indigo: {
-          50: "#D9E2FB",
-          100: "#C5D8F8",
-          200: "#A8C2F1",
-          300: "#719DE7",
-          400: "#4C7BC6",
-          500: "#2B58A5",
-          600: "#1A346C",
-        },
-        blue: {
-          50: "#E2F2FA",
-          100: "#BDE1F3",
-          200: "#92CEF0",
-          300: "#5AAFEA",
-          400: "#318FD7",
-          500: "#0A6CB5",
-          600: "#014D7D",
-        },
-        mint: {
-          50: "#E2FAF7",
-          100: "#BCF0E6",
-          200: "#99E9D9",
-          300: "#70D9C4",
-          400: "#39CBA8",
-          500: "#2DAF98",
-          600: "#145C44",
-        },
-        green: {
-          50: "#E2F5E4",
-          100: "#C4E9C8",
-          200: "#A0D8A3",
-          300: "#75C579",
-          400: "#50B351",
-          500: "#2F9739",
-          600: "#1B5A1B",
-        },
-        olive: {
-          50: "#F4F8E3",
-          100: "#E7F0C1",
-          200: "#DCE28E",
-          300: "#D1D36F",
-          400: "#C3C33B",
-          500: "#A4A432",
-          600: "#5D6224",
-        },
-        yellow: {
-          50: "#FEF9E2",
-          100: "#FCEB94",
-          200: "#FAE06A",
-          300: "#F7D434",
-          400: "#F5C800",
-          500: "#F4B937",
-          600: "#925D04",
-        },
-        orange: {
-          50: "#FFF1E3",
-          100: "#FDD6B5",
-          200: "#FCBB83",
-          300: "#F8A052",
-          400: "#F5831B",
-          500: "#A25505",
-          600: "#5C3200",
-        },
-        brown: {
-          50: "#F4E6DA",
-          100: "#F2D0B2",
-          200: "#E8B88D",
-          300: "#DE9A61",
-          400: "#D47C44",
-          500: "#975F17",
-          600: "#5F3B10",
-        },
-        dim: {
-          50: "#E6E6E6",
-        },
+        ...baseColors,
+        ...semanticColors,
       },
     },
   },
+
+  safelist: [
+    {
+      pattern: /^text-(default|title|muted|on)$/,
+    },
+    {
+      pattern: /^text-(headline|title|body)-\d{2}-[brmsb]+$/,
+    },
+  ],
+
   plugins: [],
 };
 
