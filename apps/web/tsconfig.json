@@ -15,6 +15,7 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "../../packages/ui",
+    "../../packages/icon",
     "../../packages/image",
     "../../packages/designSystem"
   ],

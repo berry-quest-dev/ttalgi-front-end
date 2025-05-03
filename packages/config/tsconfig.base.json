@@ -38,6 +38,12 @@
       "@packages/image": [
         "packages/image"
       ],
+      "@packages/icon/*": [
+        "packages/icon/components/*"
+      ],
+      "@packages/icon": [
+        "packages/icon/components"
+      ],
       "@packages/styles/*": [
         "packages/styles/*"
       ],
