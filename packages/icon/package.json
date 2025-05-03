@@ -1,4 +1,18 @@
 {
   "name": "@packages/icon",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "main": "src/components/index.ts",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx scripts/generate-icons.ts"
+  },
+  "devDependencies": {
+    "@babel/template": "^7.27.1",
+    "@babel/types": "^7.27.1",
+    "@svgr/core": "^8.1.0",
+    "@types/babel__template": "^7.4.4",
+    "fast-glob": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4"
+  }
 }
