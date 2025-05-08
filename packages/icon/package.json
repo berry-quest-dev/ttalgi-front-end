@@ -6,12 +6,12 @@
     "generate": "tsx scripts/generate-icons.ts"
   },
   "devDependencies": {
-    "@babel/template": "^7.27.1",
-    "@babel/types": "^7.27.1",
     "@svgr/core": "^8.1.0",
-    "@types/babel__template": "^7.4.4",
-    "fast-glob": "^3.3.3",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
+    "@types/node": "^22.15.16",
+    "chokidar": "^4.0.3",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.4"
+    "typescript": "^5.8.3"
   }
 }
