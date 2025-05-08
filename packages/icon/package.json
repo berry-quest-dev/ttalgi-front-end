@@ -1,8 +1,7 @@
 {
   "name": "@packages/icon",
   "version": "0.1.0",
-  "main": "src/components/index.ts",
-  "type": "module",
+  "main": "src/index.ts",
   "scripts": {
     "generate": "tsx scripts/generate-icons.ts"
   },

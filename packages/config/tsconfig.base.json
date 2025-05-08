@@ -39,10 +39,10 @@
         "packages/image"
       ],
       "@packages/icon/*": [
-        "packages/icon/components/*"
+        "packages/icon/src/*"
       ],
       "@packages/icon": [
-        "packages/icon/components"
+        "packages/icon/src"
       ],
       "@packages/styles/*": [
         "packages/styles/*"
