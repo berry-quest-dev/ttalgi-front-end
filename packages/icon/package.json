@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "main": "src/index.ts",
   "scripts": {
-    "generate": "tsx scripts/generate-icons.ts"
+    "build:scripts": "tsc -p tsconfig.scripts.json",
+    "generate:icons": "pnpm build:scripts && node build/generate.js",
+    "generate:index": "pnpm build:scripts && node build/generate-index.js",
+    "generate": "pnpm build:scripts && node build/generate-all.js",
+    "watch": "pnpm build:scripts && node build/watch.js"
   },
   "devDependencies": {
     "@svgr/core": "^8.1.0",

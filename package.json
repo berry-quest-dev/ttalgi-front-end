@@ -8,7 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "copy-favicon": "node copy-files.js",
+    "favicon:copy": "node copy-files.js",
+    "icon:watch": "pnpm --filter=@packages/icon watch",
+    "icon:generate": "pnpm --filter=@packages/icon generate",
     "reinstall": "rm -rf node_modules .turbo .next && pnpm install",
     "dev": "turbo dev",
     "dev:web": "pnpm --filter=web dev",
