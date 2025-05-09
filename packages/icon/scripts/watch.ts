@@ -1,30 +1,55 @@
 const chokidar = require("chokidar");
 const path = require("path");
+const fs = require("fs");
 const { exec } = require("child_process");
 
-const svgPath: string = path.resolve(__dirname, "../svg");
+const svgPath = path.resolve(__dirname, "../svg");
+const srcPath = path.resolve(__dirname, "../src");
+const indexPath = path.resolve(srcPath, "index.ts");
 
 console.log("👀 Watching for SVG changes...");
 
 chokidar
   .watch(svgPath, { persistent: true })
-  .on("add", runGenerate)
-  .on("change", runGenerate)
-  .on("unlink", runGenerate);
+  .on("add", handleGenerate)
+  .on("change", handleGenerate)
+  .on("unlink", handleDelete);
 
-function runGenerate(file: string): void {
-  console.log(`🔄 Change detected: ${file}`);
+function handleGenerate(file: string): void {
+  console.log(`🔄 Added or updated: ${file}`);
   exec(
     "pnpm generate",
     { cwd: path.resolve(__dirname, "..") },
     (err: Error | null, stdout: string, stderr: string) => {
-      if (err) {
-        console.error(stderr);
-        return;
-      }
-      console.log(stdout);
+      if (err) console.error(stderr);
+      else console.log(stdout);
     }
   );
 }
 
-export {};
+function pascalCase(name: string): string {
+  return name
+    .replace(/(^\w|-\w)/g, (c: string) => c.replace("-", "").toUpperCase())
+    .replace(/\.svg$/, "");
+}
+function handleDelete(file: string): void {
+  const filename = path.basename(file); // ✅ logo.svg
+  const componentName = pascalCase(filename); // ✅ Logo
+  const componentPath = path.resolve(srcPath, `${componentName}.tsx`);
+
+  console.log(`🗑️ Deleted: ${file}`);
+  console.log(`🗑️ Deleting component: ${componentName}.tsx`);
+  console.log(`🗑️ Deleting componentPath: ${componentPath}`);
+
+  if (fs.existsSync(componentPath)) {
+    fs.unlinkSync(componentPath);
+    console.log(`🗑️ Deleted component: ${componentName}.tsx`);
+  }
+
+  if (fs.existsSync(indexPath)) {
+    const lines = fs.readFileSync(indexPath, "utf8").split("\n");
+    const newLines = lines.filter((line: string) => !line.includes(`{ ${componentName} }`));
+    fs.writeFileSync(indexPath, newLines.join("\n"), "utf8");
+    console.log(`🧹 Cleaned index.ts entry for: ${componentName}`);
+  }
+}
