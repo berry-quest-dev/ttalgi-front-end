@@ -16,7 +16,7 @@ chokidar
   .on("unlink", handleDelete);
 
 function handleGenerate(file: string): void {
-  console.log(`🔄 Added or updated: ${file}`);
+  console.log(`🔄 Added or updated: ${path.basename(file)}`);
   exec(
     "pnpm generate",
     { cwd: path.resolve(__dirname, "..") },
@@ -32,14 +32,11 @@ function pascalCase(name: string): string {
     .replace(/(^\w|-\w)/g, (c: string) => c.replace("-", "").toUpperCase())
     .replace(/\.svg$/, "");
 }
-function handleDelete(file: string): void {
-  const filename = path.basename(file); // ✅ logo.svg
-  const componentName = pascalCase(filename); // ✅ Logo
-  const componentPath = path.resolve(srcPath, `${componentName}.tsx`);
 
-  console.log(`🗑️ Deleted: ${file}`);
-  console.log(`🗑️ Deleting component: ${componentName}.tsx`);
-  console.log(`🗑️ Deleting componentPath: ${componentPath}`);
+function handleDelete(file: string): void {
+  const filename = path.basename(file);
+  const componentName = pascalCase(filename);
+  const componentPath = path.resolve(srcPath, `${componentName}.tsx`);
 
   if (fs.existsSync(componentPath)) {
     fs.unlinkSync(componentPath);
@@ -48,8 +45,10 @@ function handleDelete(file: string): void {
 
   if (fs.existsSync(indexPath)) {
     const lines = fs.readFileSync(indexPath, "utf8").split("\n");
-    const newLines = lines.filter((line: string) => !line.includes(`{ ${componentName} }`));
+    const newLines = lines.filter(
+      (line: string) => !line.includes(`{ default as ${componentName} }`)
+    );
     fs.writeFileSync(indexPath, newLines.join("\n"), "utf8");
-    console.log(`🧹 Cleaned index.ts entry for: ${componentName}`);
+    console.log(`🗑️ Cleaned index.ts entry for: ${componentName}`);
   }
 }
