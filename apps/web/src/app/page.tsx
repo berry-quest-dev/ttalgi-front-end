@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@packages/icon/Logo";
+import IconLogo from "@packages/icon/Logo";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -20,7 +20,7 @@ export default function Home() {
       <h1 className="text-2xl font-semibold mb-4">
         달콤한 딸기, <br />내 주변 핫한 카페에서
       </h1>
-      <Logo className="w-fit h-fit mb-4" />
+      <IconLogo square={335} className="w-fit h-fit mb-4" />
     </div>
   );
 }

@@ -1,48 +1,18 @@
-const fs = require("fs");
 const path = require("path");
-const { transform } = require("@svgr/core");
-const template = require(path.resolve(__dirname, "./template.js"));
+const { execSync } = require("child_process");
 
-function pascalCase(name: string): string {
-  return name
-    .replace(/(^\w|-\w)/g, (c: string) => c.replace("-", "").toUpperCase())
-    .replace(/\.svg$/, "");
-}
-
-async function generateIcon(file: string): Promise<void> {
+function generateIconsWithCli(): void {
   const SVG_DIR = path.resolve(__dirname, "../svg");
   const OUT_DIR = path.resolve(__dirname, "../src");
 
-  const filePath = path.join(SVG_DIR, file);
-  const svgCode = fs.readFileSync(filePath, "utf8");
-  const componentName = pascalCase(file);
-
-  const tsx = await transform(
-    svgCode,
-    {
-      icon: true,
-      typescript: true,
-      jsxRuntime: "automatic",
-      prettier: true,
-      svgo: true,
-      plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
-      template,
-    },
-    { componentName }
+  console.log("🚀 Generating React components using @svgr/cli...");
+  execSync(
+    `npx @svgr/cli@8.1.0 --template ./build/template.js --config-file ./build/.svgrrc.js ${SVG_DIR}/*.svg --out-dir ${OUT_DIR} --ext tsx`,
+    { stdio: "inherit" }
   );
-
-  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
-  const outputPath = path.join(OUT_DIR, `${componentName}.tsx`);
-  fs.writeFileSync(outputPath, tsx, "utf8");
-  console.log(`✅ Generated: ${componentName}.tsx`);
+  console.log("✅ SVG to React component generation complete with CLI!");
 }
 
-function run(): void {
-  const SVG_DIR = path.resolve(__dirname, "../svg");
-  const files: string[] = fs.readdirSync(SVG_DIR).filter((f: string) => f.endsWith(".svg"));
-  Promise.all(files.map(generateIcon));
-}
-
-run();
+generateIconsWithCli();
 
 export {};

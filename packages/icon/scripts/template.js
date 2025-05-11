@@ -1,20 +1,20 @@
-function template(variables, { tpl }) {
-  const { imports, componentName, props, jsx, exports } = variables;
+function template({ imports, interfaces, componentName, props, jsx, exports }, { tpl }) {
   return tpl`
-    ${imports};
+    ${imports}
+    import { Ref, forwardRef } from 'react';
 
-    type IconProps = SVGProps<SVGSVGElement> & {
-      width?: number;
-      height?: number;
-      square?: number;
+    type IconProps = {
+      square?: number | string;
       color?: string;
     };
 
-    const ${componentName} = ({ width = 24, height = 24, square, color, ...props }: IconProps) => {
-      return (${jsx})
-    }
+    const ${componentName} = 
+      ({ width, height, square, color, ...props }:SVGProps<SVGSVGElement> & IconProps, ref:Ref<SVGSVGElement>) => (
+        ${jsx}
+      )
 
-    ${exports}
+    const ForwardRef = forwardRef(${componentName});
+    export default ForwardRef;
   `;
 }
 
