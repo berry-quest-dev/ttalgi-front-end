@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "main": "src/index.ts",
   "scripts": {
-    "build:scripts": "tsc -p tsconfig.scripts.json",
+    "build:scripts": "tsc -p tsconfig.scripts.json && node scripts/postbuild.js",
     "generate:icons": "pnpm build:scripts && node build/generate.js",
     "generate:index": "pnpm build:scripts && node build/generate-index.js",
     "generate": "pnpm build:scripts && node build/generate-all.js",
     "watch": "pnpm build:scripts && node build/watch.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/generator": "^7.27.1",
+    "@babel/parser": "^7.27.2",
+    "@babel/types": "^7.27.1",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
