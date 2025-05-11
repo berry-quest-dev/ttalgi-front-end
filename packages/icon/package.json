@@ -5,8 +5,8 @@
   "scripts": {
     "build:scripts": "tsc -p tsconfig.scripts.json && node scripts/postbuild.js",
     "generate:icons": "pnpm build:scripts && node build/generate.js",
-    "generate:index": "pnpm build:scripts && node build/generate-index.js",
-    "generate": "pnpm build:scripts && node build/generate-all.js",
+    "generate:index": "pnpm build:scripts && node build/generateIndex.js",
+    "generate": "pnpm build:scripts && node build/generateAll.js",
     "watch": "pnpm build:scripts && node build/watch.js"
   },
   "devDependencies": {

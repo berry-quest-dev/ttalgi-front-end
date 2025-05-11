@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo } from "@packages/icon";
+import Logo from "@packages/icon/Logo";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 

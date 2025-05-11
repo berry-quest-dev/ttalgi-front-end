@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { transform } = require("@svgr/core");
-const template = require(path.resolve(__dirname, "./svgr-template.js"));
+const template = require(path.resolve(__dirname, "./template.js"));
 
 function pascalCase(name: string): string {
   return name
