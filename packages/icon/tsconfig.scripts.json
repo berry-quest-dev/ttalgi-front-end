@@ -5,6 +5,7 @@
     "outDir": "build",
     "esModuleInterop": true,
     "moduleResolution": "Node",
+    "jsx": "react-jsx",
     "strict": true,
     "resolveJsonModule": true
   },
