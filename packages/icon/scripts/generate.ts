@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { transform } = require("@svgr/core");
+const template = require(path.resolve(__dirname, "./svgr-template.js"));
 
 function pascalCase(name: string): string {
   return name
@@ -25,6 +26,7 @@ async function generateIcon(file: string): Promise<void> {
       prettier: true,
       svgo: true,
       plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+      template,
     },
     { componentName }
   );
