@@ -1,2 +1,2 @@
-export { default as House } from './House';
-export { default as Logo } from './Logo';
+export { default as IconHouse } from './House';
+export { default as IconLogo } from './Logo';

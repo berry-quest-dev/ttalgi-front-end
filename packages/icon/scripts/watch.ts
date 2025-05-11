@@ -46,7 +46,7 @@ function handleDelete(file: string): void {
   if (fs.existsSync(indexPath)) {
     const lines = fs.readFileSync(indexPath, "utf8").split("\n");
     const newLines = lines.filter(
-      (line: string) => !line.includes(`{ default as ${componentName} }`)
+      (line: string) => !line.includes(`{ default as Icon${componentName} }`)
     );
     fs.writeFileSync(indexPath, newLines.join("\n"), "utf8");
     console.log(`🗑️ Cleaned index.ts entry for: ${componentName}`);
