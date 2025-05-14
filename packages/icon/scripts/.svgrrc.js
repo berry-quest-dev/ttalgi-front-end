@@ -7,8 +7,17 @@ module.exports = {
   dimensions: true,
   template: require("./template.js"),
   svgProps: {
-    width: "{square ?? width}",
-    height: "{square ?? height}",
     ref: "{ref}",
+  },
+  svgo: true,
+  svgoConfig: {
+    plugins: [
+      {
+        name: "removeAttrs",
+        params: {
+          attrs: ["stroke", "fill"],
+        },
+      },
+    ],
   },
 };
