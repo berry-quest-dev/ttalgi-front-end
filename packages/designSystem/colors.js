@@ -123,6 +123,8 @@ const baseColors = {
 };
 
 const semanticColors = {
+  none: "transparent",
+
   primary: baseColors.pink[300],
   primaryHover: baseColors.pink[400],
   onPrimary: baseColors.white,
@@ -152,4 +154,9 @@ const semanticColors = {
   ratingStar: baseColors.yellow[300],
 };
 
-module.exports = { baseColors, semanticColors };
+const colors = {
+  ...baseColors,
+  ...semanticColors,
+};
+
+module.exports = colors;
