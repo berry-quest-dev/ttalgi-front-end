@@ -1,8 +1,9 @@
 "use client";
 
-import IconLogo from "@packages/icon/Logo";
+import Logo from "@packages/icon/Logo";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Icon from "packages/icon/Icon";
 
 export default function Home() {
   const router = useRouter();
@@ -20,7 +21,8 @@ export default function Home() {
       <h1 className="text-2xl font-semibold mb-4">
         달콤한 딸기, <br />내 주변 핫한 카페에서
       </h1>
-      <IconLogo square={335} className="w-fit h-fit mb-4" />
+      <Logo />
+      <Icon iconType="Bell" color="pink" stroke="blue" />
     </div>
   );
 }

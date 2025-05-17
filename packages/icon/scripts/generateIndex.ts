@@ -21,7 +21,7 @@ function generateIndexFile(): void {
   const exports = files
     .map((file: string) => {
       const name = getComponentName(file);
-      return `export { default as Icon${name} } from './src/${name}';`;
+      return `export { default as ${name} } from './src/${name}';`;
     })
     .join("\n");
 
