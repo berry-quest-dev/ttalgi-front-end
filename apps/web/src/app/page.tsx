@@ -22,7 +22,6 @@ export default function Home() {
         달콤한 딸기, <br />내 주변 핫한 카페에서
       </h1>
       <Logo />
-      <Icon iconType="Bell" color="pink" stroke="blue" />
     </div>
   );
 }

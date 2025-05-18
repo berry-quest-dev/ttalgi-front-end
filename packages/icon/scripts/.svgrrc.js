@@ -8,6 +8,10 @@ module.exports = {
   template: require("./template.js"),
   svgProps: {
     ref: "{ref}",
+    width: "{width}",
+    height: "{height}",
+    fill: "{color}",
+    stroke: "{stroke}",
   },
   svgo: true,
   svgoConfig: {

@@ -1,7 +1,7 @@
 function template({ imports, interfaces, componentName, props, jsx, exports }, { tpl }) {
   return tpl`
     ${imports}
-    import { Ref, forwardRef, cloneElement } from 'react';
+    import { Ref, forwardRef } from 'react';
 
     type IconProps = {
       width?: number | string;
@@ -14,15 +14,9 @@ function template({ imports, interfaces, componentName, props, jsx, exports }, {
       { width, height, color, stroke, ...props }: SVGProps<SVGSVGElement> & IconProps,
       ref:Ref<SVGSVGElement>
     ) => {
-      const styleProps = {
-        ...(color && { fill: color }),
-        ...(stroke && { stroke }),
-        width,
-        height,
-        ref,
-        ...props,
-      };
-      return cloneElement(${jsx}, styleProps);
+      return (
+        ${jsx}
+      );
     };
 
     const ForwardRef = forwardRef(${componentName});
