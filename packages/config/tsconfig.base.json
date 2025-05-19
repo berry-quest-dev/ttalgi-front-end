@@ -42,7 +42,7 @@
         "packages/icon/src/*"
       ],
       "@packages/icon": [
-        "packages/icon/src"
+        "packages/icon"
       ],
       "@packages/styles/*": [
         "packages/styles/*"

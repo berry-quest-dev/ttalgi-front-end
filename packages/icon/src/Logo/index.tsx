@@ -1,0 +1,201 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+type IconProps = {
+  size?: number | string;
+  square?: number | string;
+  color?: string;
+};
+const Logo = (
+  { size = 335, color, ...props }: SVGProps<SVGSVGElement> & IconProps,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    fill="none"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fill="url(#Logo_svg__a)"
+      d="M210.1 112.5c-2 .5-85 0-105-3.5-1.5-2 2.5-2.5 5-3.5s101-.5 104-.5 6.5 4 6 5-3 1-5 1-3 1-5 1.5"
+    />
+    <path
+      fill="url(#Logo_svg__b)"
+      d="M225.7 122.5c1.5-1.5 1-10 0-11.5-3.5-2.5-3 5-3.6 6.5-.5 1.5-2 1-3.5 3s-1.7 9.3-4 11.5c-1 1-8.5 1.5-13 1.5-4 0-13.5-3.5-26-3.5-5 0-40.5 2.5-47.5 2.5s-9.5 2-12 3-11 0-12.4 1c-1.5 1 1.4 3 4 3.5 2.5.5 103.5 1.5 107.4 1a9 9 0 0 0 7.6-5.5c1-2.5 1-9.5 1-10s.5-1.5 2-3"
+    />
+    <path
+      fill="url(#Logo_svg__c)"
+      d="M100.6 113.5c.4-1.6-1.1-8.3-2-11.5-3 0-4.5 3-4.5 4.5s2 2.5 1.5 4.5-1.5 4.5-1.5 8 2 19 5 19.5 2.5-9.5 2.5-13-.5-6-1-8-.5-2 0-4"
+    />
+    <path
+      fill="url(#Logo_svg__d)"
+      d="M214 143.5c2.5.5 3.5 1 4.5 2.5s1.5 3 3.6 3c3.9 0 2.5 3.5 3 11.5s-8.5 59-9.5 62.5-5 7-5 8.5 1 1 1 4.5-3 20-5 28.5-4.5 9.5-6.5 9c-1.6-.4-1.3-3.8-1-5.5-26 .5-78 1-78.5-1-.5-2.5 3.5-2.5 10-4s42.5-2.5 47.5-2.5c4 0 15.7 1 21 1.5.2-.5.8-3.6 2-12 1.5-10.5 6.5-16 6.5-17.5s-1.5-1.5-2.5-2.5c-.8-.8-.6-3-.5-4h-22c-7.6 0-39.1-3-54-4.5-1.3-.3-4-1-4.5-1s-2.5-1-4-2c-1-2-3.8-2.5-5.1-2.5-2-.5-3.5-.5-4-2s-2.4-1.5-3.9-2-.5-7-2-5.5-1 14-2.5 14-4-5.5-6-10.5.5-7.5-3-24-2-32.5-2-34.5 3-3 3-4-2-2-2-3 0-2.5 3-2c2.4.4 2.7 5.2 2.5 7.5 0 .5-.2 1.9-1 3.5s.4 6 1 8c2.4-6.5 7.5-19.8 9.5-21 2.5-1.5 103.9 2.5 106.4 3"
+    />
+    <path
+      fill="url(#Logo_svg__e)"
+      d="M109.6 237.5c-.5 0-1-3-2-4-.5-2.5 1.5 0 2.5.5s1 2.5 1.5 3.5 0 2 0 3-1 3-.5 4 1.5 1 2 2.5 0 3.5 0 4.5 1 2.5 1.5 4.5-2 2-2 2.5 2.5 0 3 1-.5 3.5-.5 4.5-1 3-1.5 2 0-1.5-1-3 0-2.5-1-3.5-1.5-1.5-2-3.5 2-4 2-4.5-.5-1-1.5-2-.5-3.5-.5-4-2-3-2.5-4.5 3-3.5 2.5-3.5"
+    />
+    <path fill="url(#Logo_svg__f)" d="M115.6 270c-1.5 1-4 0-4-2 .5-1 3.5 0 4 0s1.5 1 0 2" />
+    <path
+      fill="url(#Logo_svg__g)"
+      d="M97.1 153.5c-.8 1.6.4 6 1 8 1 4 5.1 31.7 7 45 0 6-1 14-2.5 14s-4-5.5-6-10.5.5-7.5-3-24-2-32.5-2-34.5 3-3 3-4-2-2-2-3 0-2.5 3-2c2.4.4 2.7 5.2 2.5 7.5 0 .5-.2 1.9-1 3.5"
+    />
+    <path
+      fill="#fff"
+      d="M164.1 157.5c-4.5 0-6-1.5-6.5-5 .5-4 4-5.5 5.5-6.5s8.5-1.5 10.5 0-1 4.5 2 5.5 7-2.5 10.5-1 1 5.5 2.5 7 4.5.5 7 1.5 2.5 2.5 2.5 4-2.5 9-9.5 8.5-6-7.5-7-8.5-4.5-.5-6.5-1.5-2-2-3.5-3.5-3-.5-7.5-.5"
+    />
+    <path
+      fill="#fff"
+      d="M145.1 167.5c7.5-9 14-7 22-7 7.5 1.5 12 8 14 10.5s3.5 10-3 19.5-23.5 14-28.5 15.5-8.5-.5-11.5-4-.5-25.5 7-34.5"
+    />
+    <path
+      fill="url(#Logo_svg__h)"
+      d="M158.6 188c0-4.5 3.5-8.5 5.5-8.5 4.5 0 6 3.5 6 7s-4.5 7-7 7-4.5-1-4.5-5.5"
+    />
+    <path
+      fill="url(#Logo_svg__i)"
+      d="M145.6 195.5c0-3.5 3.5-6.5 6-6.5 1.7 0 5 .8 5 4 0 4-4 7-6.5 7s-4.5-1-4.5-4.5"
+    />
+    <path
+      fill="url(#Logo_svg__j)"
+      d="M12.1 298c-.8.8-.3 3.3 0 4.5-7.5-3-4.5-5.5-4.5-9s1-5.5.5-6-2-15-2-28-3-76-4-89 0-71.5 0-77.5-2-33-2-39c0-4-.3-33.5 0-48 16.5-2.5 52-3.5 64-3.5 15.5 0 55 1.5 78 0s54-2 62.5-2h99.5c4 0 7.5 0 7.5 4s-4 4-12 4-28.5 1-36 1-65 1-80 1-66 2.5-73.5 2.5-36.5-1-47.5-1c-8.8 0-41.1.2-56.5 1 0 9.5 1 31.7 1 36.5 0 6 2 40.5 2 47V167c0 8 3 43.5 3 48.5s2 74.5 1.5 75.5c-.4.8-1.1.3-1.5 0 .5.7 1.5 2.3 1.5 3.5 0 1.5-.5 2.5-1.5 3.5"
+    />
+    <path
+      fill="#D1728F"
+      d="M101.1 322c-20 0-86.5 2-88.5 1.5-.1-.5-.5-1.7-.5-2.5 0-1-1.5-1.5-2.5-5-.8-2.8.4-5.5 1-6.5-.3 0-1.2-.5-2-2.5s-.3-2.8 0-3c1.2 0 3.8.2 5 1s.5 4 0 5.5c.4.5 1.3 1.8 2.5 3s1.2 3.8 1 5c.9 0 5.1-.5 17.5-2.5 15.5-2.5 57.5-2.5 66.5-4s47 0 55 0 39-3.5 47-3.5c7 0 79-2.5 115-2-3.5-95-7-214.5-5-291 .2-4.5.5-5.5 3-6s3.5.5 4 2.5 2 36 2.5 49.5c.4 10.8 2.9 167.5 4 244.5.9-.3 3-.7 4.5.5 2 1.5 0 4-2 7s-11.5 1.5-16.5 1.5-36.5 1.5-48 1-90 4.5-96 4.5-47.5 1.5-67.5 1.5"
+    />
+    <path
+      fill="url(#Logo_svg__k)"
+      d="M233.6 86 89.1 85c-1-7.5.7-11.2 2-14.5 1-2.5 10-13 12.6-11.5 2.5 1.5-.5 5 0 6.5s2.5-1 4.5-1.5 11.5-3 14-4 94-1 94 1c0 1.6-1 2-1.5 2 0 .8.4 2.9 2.4 4.5 2.5 2 6.5 4.5 8 4s.5-3.5 1.5-4 8 5.5 10 8 2.5 5 2 8c-.4 2.4-3.5 2.7-5 2.5"
+    />
+    <defs>
+      <linearGradient
+        id="Logo_svg__a"
+        x1={160.4}
+        x2={160.4}
+        y1={102}
+        y2={141.1}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#E1A1B5" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__b"
+        x1={160.4}
+        x2={160.4}
+        y1={102}
+        y2={141.1}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#E1A1B5" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__c"
+        x1={160.4}
+        x2={160.4}
+        y1={102}
+        y2={141.1}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#E1A1B5" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__d"
+        x1={209.5}
+        x2={113.5}
+        y1={267.5}
+        y2={155}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset={0.4} stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__e"
+        x1={129}
+        x2={109}
+        y1={327.5}
+        y2={232}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__f"
+        x1={129}
+        x2={109}
+        y1={327.5}
+        y2={232}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__g"
+        x1={105}
+        x2={91}
+        y1={221}
+        y2={132.5}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__h"
+        x1={150}
+        x2={182}
+        y1={202}
+        y2={169}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset={0.2} stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__i"
+        x1={150}
+        x2={148.5}
+        y1={202}
+        y2={183}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset={0.2} stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__j"
+        x1={70.5}
+        x2={-42}
+        y1={137}
+        y2={316.5}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+      <linearGradient
+        id="Logo_svg__k"
+        x1={171}
+        x2={120}
+        y1={99.5}
+        y2={35}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset={0.1} stopColor="#D1728F" />
+        <stop offset={1} stopColor="#F6E5EB" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const ForwardRef = forwardRef(Logo);
+export default ForwardRef;

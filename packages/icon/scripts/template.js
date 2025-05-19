@@ -4,18 +4,23 @@ function template({ imports, interfaces, componentName, props, jsx, exports }, {
     import { Ref, forwardRef } from 'react';
 
     type IconProps = {
-      square?: number | string;
+      width?: number | string;
+      height?: number | string;
       color?: string;
+      stroke?: string;
     };
 
-    const ${componentName} = 
-      ({ width, height, square, color, ...props }:SVGProps<SVGSVGElement> & IconProps, ref:Ref<SVGSVGElement>) => (
+    const ${componentName} = (
+      { width, height, color, stroke, ...props }: SVGProps<SVGSVGElement> & IconProps,
+      ref:Ref<SVGSVGElement>
+    ) => {
+      return (
         ${jsx}
-      )
+      );
+    };
 
     const ForwardRef = forwardRef(${componentName});
     export default ForwardRef;
   `;
 }
-
 module.exports = template;

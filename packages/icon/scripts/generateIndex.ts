@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const SRC_DIR = path.resolve(__dirname, "../src");
-const INDEX_PATH = path.join(SRC_DIR, "index.ts");
+const INDEX_PATH = path.join("./", "index.ts");
 
 function getComponentName(file: string): string {
   return file.replace(/\.tsx$/, "");
@@ -21,7 +21,7 @@ function generateIndexFile(): void {
   const exports = files
     .map((file: string) => {
       const name = getComponentName(file);
-      return `export { default as Icon${name} } from './${name}';`;
+      return `export { default as ${name} } from './src/${name}';`;
     })
     .join("\n");
 

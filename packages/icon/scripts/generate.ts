@@ -2,7 +2,7 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 function generateIconsWithCli(): void {
-  const SVG_DIR = path.resolve(__dirname, "../svg");
+  const SVG_DIR = path.resolve(__dirname, "../svg/**");
   const OUT_DIR = path.resolve(__dirname, "../src");
 
   console.log("🚀 Generating React components using @svgr/cli...");

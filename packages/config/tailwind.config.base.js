@@ -1,5 +1,5 @@
 import path from "path";
-const { baseColors, semanticColors } = require("../designSystem/colors");
+const { colors } = require("../designSystem/colors");
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -31,8 +31,7 @@ const config = {
       },
 
       colors: {
-        ...baseColors,
-        ...semanticColors,
+        ...colors,
       },
     },
   },
